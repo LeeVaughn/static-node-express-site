@@ -19,7 +19,8 @@ app.get("/about", (req, res) => {
 
 // GET about route
 app.get("/project:id", (req, res) => {
-  res.render("project", { projects: projects });
+  const id = req.params.id
+  res.render("project", { projects: projects, id });
 });
 
 app.listen(3000, () => {
