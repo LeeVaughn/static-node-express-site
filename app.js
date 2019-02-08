@@ -5,19 +5,21 @@ const projects = data.projects;
 
 app.set("view engine", "pug");
 
+app.use(express.static("public"));
+
 // GET root route
 app.get("/", (req, res) => {
-  res.render("layout", projects);
+  res.render("index", { projects: projects });
 });
 
 // GET about route
 app.get("/about", (req, res) => {
-  res.render("about", projects);
+  res.render("about");
 });
 
 // GET about route
 app.get("/project:id", (req, res) => {
-  res.render("about", projects);
+  res.render("project", { projects: projects });
 });
 
 app.listen(3000, () => {
