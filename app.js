@@ -9,7 +9,7 @@ app.use(express.static("public"));
 
 // GET root route
 app.get("/", (req, res) => {
-  res.render("index", { projects: projects });
+  res.render("index", { projects });
 });
 
 // GET about route
@@ -20,7 +20,20 @@ app.get("/about", (req, res) => {
 // GET about route
 app.get("/project:id", (req, res) => {
   const id = req.params.id
-  res.render("project", { projects: projects, id });
+  res.render("project", { projects, id });
+});
+
+// creates error for non-existant routes and triggers error handler
+app.use((req, res, next) => {
+  const err = new Error("Not Found");
+  err.status = 404;
+  next(err);
+});
+
+// error handler
+app.use((err, req, res, next) => {
+  res.locals.error = err;
+  res.render("error");
 });
 
 app.listen(3000, () => {
