@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  article.grid-container.portfolio-intro
+    div
+      h1 Error: #{error.message}!
+      h2 There has been a #{error.status} error
+      pre= error.stack
