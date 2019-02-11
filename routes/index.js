@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
-const data = require("../data.json");
-const projects = data.projects;
+const data = require("../data/data.json");
+// same as projects = data.projects
+const { projects } = data;
 
 // GET root route
 router.get("/", (req, res) => {
@@ -14,7 +15,7 @@ router.get("/about", (req, res) => {
 });
 
 // GET about route
-router.get("/project:id", (req, res) => {
+router.get("/project/:id", (req, res) => {
   const id = req.params.id
   res.render("project", { projects, id });
 });
