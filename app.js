@@ -1,27 +1,11 @@
 const express = require("express");
 const app = express();
-const data = require("./data.json");
-const projects = data.projects;
+const routes = require("./routes");
 
 app.set("view engine", "pug");
 
 app.use(express.static("public"));
-
-// GET root route
-app.get("/", (req, res) => {
-  res.render("index", { projects });
-});
-
-// GET about route
-app.get("/about", (req, res) => {
-  res.render("about");
-});
-
-// GET about route
-app.get("/project:id", (req, res) => {
-  const id = req.params.id
-  res.render("project", { projects, id });
-});
+app.use(routes);
 
 // creates error for non-existant routes and triggers error handler
 app.use((req, res, next) => {
