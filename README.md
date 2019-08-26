@@ -14,14 +14,13 @@ be able to help and review the work of the current students
 * Main section of landing page displays a preview of projects build
 * The user can click on a project to be shown more details about that project
 * Information on projects stored in a JSON data file
-* Running ```npm install``` installs relevant dependencies
+* App can be launched with the ```npm start``` command
 
 ## To Run
 
 * Download project files by running ```git clone https://github.com/LeeVaughn/static-node-express-site```
 * Navigate to the project folder
 * Install dependencies with ```npm install```
-* You will need to create your own config.js file using this format:
 * Type ```npm start``` or ```node app.js``` to run application (application runs on localhost:3000)
 
 ## Dependencies
