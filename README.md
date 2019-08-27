@@ -16,6 +16,11 @@ be able to help and review the work of the current students
 * Information on projects stored in a JSON data file
 * App can be launched with the ```npm start``` command
 
+## Exceeds CSS Customizations
+
+* Added text-shadow to h1 element
+* Added transform and box-shadow styles to project thumbnails when hovered
+
 ## To Run
 
 * Download project files by running ```git clone https://github.com/LeeVaughn/static-node-express-site```
