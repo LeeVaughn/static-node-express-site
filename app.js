@@ -7,7 +7,7 @@ app.set("view engine", "pug");
 app.use(express.static("public"));
 app.use(routes);
 
-// creates error for non-existant routes and triggers error handler
+// creates error for non-existent routes and triggers error handler
 app.use((req, res, next) => {
   const err = new Error("Not Found");
   err.status = 404;
@@ -17,6 +17,7 @@ app.use((req, res, next) => {
 // error handler
 app.use((err, req, res, next) => {
   res.locals.error = err;
+  console.log(`Oops! There has been a ${err.status}, ${err.message} error`)
   res.render("error");
 });
 
