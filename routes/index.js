@@ -15,9 +15,17 @@ router.get("/about", (req, res) => {
 });
 
 // GET about route
-router.get("/project/:id", (req, res) => {
+router.get("/project/:id", (req, res, next) => {
   const id = req.params.id
-  res.render("project", { projects, id });
+
+  if (projects[id]) {
+    res.render("project", { projects, id });
+  } else {
+    const err = new Error();
+    err.status = 404;
+    err.message = "Looks like the project you requested doesn't exist";
+    next(err);
+  }
 });
 
 module.exports = router;
