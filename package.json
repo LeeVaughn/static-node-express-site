@@ -26,6 +26,6 @@
   "homepage": "https://github.com/LeeVaughn/static-node-express-site#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "pug": "^2.0.3"
+    "pug": "^3.0.1"
   }
 }
